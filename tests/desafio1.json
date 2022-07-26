@@ -1,16 +1,16 @@
 {
-    "coluna_usuario": "usuario",
-    "tabela_que_contem_usuario": "pessoa_usuaria",
-    "coluna_plano": "plano",
-    "tabela_que_contem_plano": "planos",
-    "coluna_historico_de_reproducoes": "data_reproducao",
-    "tabela_que_contem_historico_de_reproducoes": "acessos",
-    "coluna_seguindo_artistas": "artista_id",
-    "tabela_que_contem_seguindo_artistas": "seguidores",
-    "coluna_artista": "artista",
-    "tabela_que_contem_artista": "pessoa_artista",
+    "coluna_usuario": "user_name",
+    "tabela_que_contem_usuario": "users",
+    "coluna_plano": "plan_type",
+    "tabela_que_contem_plano": "plans",
+    "coluna_historico_de_reproducoes": "track_id",
+    "tabela_que_contem_historico_de_reproducoes": "played",
+    "coluna_seguindo_artistas": "artist_id_followed",
+    "tabela_que_contem_seguindo_artistas": "follows",
+    "coluna_artista": "artist_name",
+    "tabela_que_contem_artista": "artists",
     "coluna_album": "album",
     "tabela_que_contem_album": "albuns",
-    "coluna_cancoes": "cancoes",
-    "tabela_que_contem_cancoes": "cancoes"
+    "coluna_cancoes": "track_name",
+    "tabela_que_contem_cancoes": "tracks"
   }
