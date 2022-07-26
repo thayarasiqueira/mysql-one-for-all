@@ -25,17 +25,17 @@ CREATE TABLE SpotifyClone.users(
 
 CREATE TABLE SpotifyClone.follows(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    user_id_following INT,
-    artist_id_followed INT,
+    user_id_following INT NOT NULL,
+    artist_id_followed INT NOT NULL,
         FOREIGN KEY (user_id_following) REFERENCES users (user_id),
         FOREIGN KEY (artist_id_followed) REFERENCES artists (artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.albuns(
     album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    album VARCHAR(100),
-    release_year INT,
-    artist_id INT,
+    album VARCHAR(100) NOT NULL,
+    release_year YEAR NOT NULL,
+    artist_id INT NOT NULL,
 	FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 ) engine = InnoDB;
 
@@ -50,8 +50,8 @@ CREATE TABLE SpotifyClone.tracks(
 CREATE TABLE SpotifyClone.played(
 	played_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     date_played DATETIME NOT NULL,
-    user_id INT,
-    track_id INT,
+    user_id INT NOT NULL,
+    track_id INT NOT NULL,
         FOREIGN KEY (user_id) REFERENCES users (user_id),
         FOREIGN KEY (track_id) REFERENCES tracks (track_id)
 ) engine = InnoDB;
@@ -72,18 +72,18 @@ VALUES
   ("Fog"),
   ("Freedie Shannon");
 
-INSERT INTO SpotifyClone.users (user_name, age, starting_date)
+INSERT INTO SpotifyClone.users (user_name, age, starting_date, plan_id)
 VALUES
-  ("Thati", 23, "2019-10-20"),
-  ("Cintia", 35, "2017-12-30"),
-  ("Bill", 20, "2019-06-05"),
-  ("Roger", 45, "2020-05-13"),
-  ("Norman", 58, "2017-02-17"),
-  ("Patrick", 33, "2017-01-06"),
-  ("Vivian", 26, "2018-01-05"),
-  ("Carol", 19, "2018-02-14"),
-  ("Angelina", 42, "2018-04-29"),
-  ("Paul", 46, "2017-01-17");
+  ("Thati", 23, "2019-10-20", 1),
+  ("Cintia", 35, "2017-12-30", 4),
+  ("Bill", 20, "2019-06-05", 3),
+  ("Roger", 45, "2020-05-13", 2),
+  ("Norman", 58, "2017-02-17", 2),
+  ("Patrick", 33, "2017-01-06", 4),
+  ("Vivian", 26, "2018-01-05", 3),
+  ("Carol", 19, "2018-02-14", 3),
+  ("Angelina", 42, "2018-04-29", 4),
+  ("Paul", 46, "2017-01-17", 4);
 
 INSERT INTO SpotifyClone.follows (user_id_following, artist_id_followed)
 VALUES
